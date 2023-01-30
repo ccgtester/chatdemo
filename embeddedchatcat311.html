@@ -9,68 +9,19 @@
     </style>
   </head>
   <body>
-    <h2>Flowers Updated</h2>
-    <style type='text/css'>
-      .embeddedServiceHelpButton .helpButton .uiButton {
-        background-color: #005290;
-        font-family: "Arial", sans-serif;
-      }
-      .embeddedServiceHelpButton .helpButton .uiButton:focus {
-        outline: 1px solid #005290;
-      }
-    </style>
-
-    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
-    <script type='text/javascript'>
-      var initESW = function(gslbBaseURL) {
-        embedded_svc.settings.displayHelpButton = true; //Or false
-        embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-
-        //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
-        //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
-
-        //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-        //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-
-        // Settings for Chat
-        //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-          // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-          // Returns a valid button ID.
-        //};
-        //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-        //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-        //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-
-        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-        embedded_svc.settings.entryFeature = 'LiveAgent';
-
-        embedded_svc.init(
-          'https://c311--cat311demo.my.salesforce.com',
-          'https://cat311demo-catalyst-311.cs165.force.com/311',
-          gslbBaseURL,
-          '00D6s0000008kkb',
-          'CCG_Chat_Demo',
-          {
-            baseLiveAgentContentURL: 'https://c.la2-c1cs-ia5.salesforceliveagent.com/content',
-            deploymentId: '5726s000000CaUf',
-            buttonId: '5736s000000CaqC',
-            baseLiveAgentURL: 'https://d.la2-c1cs-ia5.salesforceliveagent.com/chat',
-            eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I6s0000004CekEAE_185f198119f',
-            isOfflineSupportEnabled: false
-          }
-        );
-      };
-
-      if (!window.embedded_svc) {
-        var s = document.createElement('script');
-        s.setAttribute('src', 'https://c311--cat311demo.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-        s.onload = function() {
-          initESW(null);
-        };
-        document.body.appendChild(s);
-      } else {
-        initESW('https://service.force.com');
-      }
+    <h2>Amazon Connect PoC</h2>
+    <script type="text/javascript">
+      (function(w, d, x, id){
+        s=d.createElement('script');
+        s.src='https://dend6g4sigg57.cloudfront.net/amazon-connect-chat-interface-client.js';
+        s.async=1;
+        s.id=id;
+        d.getElementsByTagName('head')[0].appendChild(s);
+        w[x] =  w[x] || function() { (w[x].ac = w[x].ac || []).push(arguments) };
+      })(window, document, 'amazon_connect', 'ca96654b-5c12-4ba2-a2c2-c7f61f01edb6');
+      amazon_connect('styles', { openChat: { color: '#ffffff', backgroundColor: '#123456'}, closeChat: { color: '#ffffff', backgroundColor: '#123456'} });
+      amazon_connect('snippetId', 'QVFJREFIanUzYnhvNFBocFpzVHdoQjZmUUtOd1FaMjMxR3ZDRG9RRWNFUkFkM3dWVWdHY0tHOGlLTUVuMEIvZmZIZnJ1dVhsQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNazVubUpRSHU5NDRTdW1JMkFnRVFnQ3NHZ2VDL3o4QmZrVTlobEFkTjZOWUcyall3OWlUK3hTaWJNUllqTFNQK1B1OVZHR3hEU2ZWMjZoT2o6OnV2Wm9sa3BOQjVnQU5hME02TU9xMTVicEJieWU1U2RiNUpDVEhpQy9GeTM4ZC8zWjJ1M2dNZTROM3Rzb1kxWG1rcDZtd3VnYWcwTVhDZ2hIRTNkM3ptTFlvazlVbzRwSFRTd3FoTm9qN254RjJVK1hmS2ZTVS95bEVpamFSQlBkNlQySzhuMVRqc1Y5bzlha282RC8wNFArcVRVL1ZkST0=');
+      amazon_connect('supportedMessagingContentTypes', [ 'text/plain', 'text/markdown' ]);
     </script>
   </body>
 </html>
